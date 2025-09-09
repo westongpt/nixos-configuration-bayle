@@ -6,6 +6,8 @@
       ./hardware-configuration.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -120,11 +122,17 @@
       vscode
       plexamp
       superfile
-      ghostty
       mc
       htop
       calibre
+      protonup-qt
+      element-desktop
     ];
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
   };
 
   # Fix for steam missing mouse cursors.
@@ -149,6 +157,7 @@
     enable = true;
     extraConfig = ''
       set -g mouse on
+      set -g default-terminal "screen-256color"
     '';
   };
 
@@ -176,6 +185,9 @@
     kdePackages.partitionmanager
     wayland-utils
     wl-clipboard
+    ghostty
+    neovim
+    rsync
   ];
 
   system.stateVersion = "25.05";
