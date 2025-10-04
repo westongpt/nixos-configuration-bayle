@@ -4,6 +4,7 @@
   services.autorandr.enable = true;
   services.printing.enable = true;
   services.openssh.enable = true;
+  services.openssh.allowSFTP = true;
   services.flatpak.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -41,33 +42,14 @@
     enable = true;
     openFirewall = true;
     user = "weston";
-    dataDir = "/mnt/storage/plexdata";
+    dataDir = "/mnt/games/plexdata";
   };
 
-  services.samba = {
-    enable = true;
-    openFirewall = true;
-    settings = {
-      global = {
-        "workgroup" = "WORKGROUP";
-        "server string" = "bayle";
-        "netbios name" = "bayle";
-        "security" = "user";
-        "guest account" = "weston";
-      };
-      Media = {
-        path = "/mnt/plex";
-        comment = "Plex Media";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "weston";
-        "force group" = "users";
-      };
-    };
-  };
+#  services.jellyfin = {
+#    enable = true;
+#    openFirewall = true;
+#    user = "weston";
+#  };
 
   services = {
     desktopManager.plasma6.enable = true;

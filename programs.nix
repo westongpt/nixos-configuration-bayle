@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     pkgs.easyeffects
+    pkgs.piper
+    pkgs.libratbag
     kdePackages.discover
     kdePackages.kcalc
     kdePackages.kcharselect
