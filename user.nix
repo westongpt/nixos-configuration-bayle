@@ -10,7 +10,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       obsidian
-      vivaldi
       vesktop
       vscode
       plexamp

@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     pkgs.easyeffects
     pkgs.piper
     pkgs.libratbag
+    inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     kdePackages.discover
     kdePackages.kcalc
     kdePackages.kcharselect
@@ -21,7 +22,13 @@
     ghostty
     neovim
     rsync
+    xwayland-satellite
+    protontricks
   ];
+
+  programs.niri.enable = true;
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -35,7 +42,15 @@
     ];
   };
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
 
   programs.git = {
     enable = true;
