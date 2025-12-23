@@ -2,11 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pkgs.easyeffects
-    pkgs.piper
-    pkgs.libratbag
     inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     kdePackages.discover
+    kdePackages.dolphin
     kdePackages.kcalc
     kdePackages.kcharselect
     kdePackages.kclock
@@ -19,17 +17,16 @@
     kdePackages.partitionmanager
     wayland-utils
     wl-clipboard
+    pkgs.mpv
     clang
     superfile
     ghostty
-    neovim
     rsync
     xwayland-satellite
-    protontricks
   ];
 
+  xdg.portal.enable = true;
   programs.niri.enable = true;
-  programs.thunar.enable = true;
   programs.xfconf.enable = true;
 
   programs.neovim = {
@@ -57,7 +54,7 @@
   programs.git = {
     enable = true;
     config = {
-      user.name = "Weston Hanenrs";
+      user.name = "Weston Hanners";
       user.email = "weston@hanners.us";
       init.defaultBranch = "main";
     };    

@@ -6,12 +6,10 @@
   users.users.weston = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    description = "Weston Hanners";
+    description = "Weston";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       obsidian
-      vesktop
-      vscode
       plexamp
       superfile
       mc

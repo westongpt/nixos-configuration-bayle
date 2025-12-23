@@ -16,7 +16,11 @@
     steamtinkerlaunch
     wget
     xdotool
+    blender
+    godot
+    krita
     unzip
+    ripgrep
     xxd
     yad
     xwininfo
