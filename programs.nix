@@ -5,25 +5,23 @@
     inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
     kdePackages.discover
     kdePackages.dolphin
-    kdePackages.kcalc
-    kdePackages.kcharselect
-    kdePackages.kclock
-    kdePackages.kcolorchooser
-    kdePackages.kolourpaint
-    kdePackages.ksystemlog
-    kdePackages.sddm-kcm
-    kdiff3
     kdePackages.isoimagewriter
     kdePackages.partitionmanager
+    kdePackages.plasma-workspace
     wayland-utils
     wl-clipboard
     pkgs.mpv
+    pkgs.openrgb
     clang
     superfile
     ghostty
+    protontricks
     rsync
+    pciutils
     xwayland-satellite
-  ];
+    vulkan-tools
+    snixembed
+];
 
   xdg.portal.enable = true;
   programs.niri.enable = true;
@@ -41,14 +39,13 @@
     ];
   };
 
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+#    capSysNice = true;
+  };
+  
+  programs.steam = {
+    enable = true;
   };
 
   programs.git = {
@@ -70,12 +67,4 @@
   };
 
   programs.zsh.enable = true;
-
-  programs.nano.nanorc = 
-  ''
-    set tabstospaces
-    set tabsize 2
-    set linenumbers
-    set mouse
-  '';
 }

@@ -12,8 +12,7 @@
       obsidian
       plexamp
       superfile
-      mc
-      htop
+      nerd-fonts.iosevka
       calibre
       protonup-qt
       element-desktop

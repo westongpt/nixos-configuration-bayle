@@ -2,3 +2,4 @@
 sudo cp ./*.nix /etc/nixos
 sudo cp flake.lock /etc/nixos
 sudo nixos-rebuild switch
+sudo cp /etc/nixos/flake.lock ./

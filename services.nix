@@ -8,6 +8,7 @@
   services.flatpak.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.hardware.openrgb.enable = true; 
 
   services.avahi = {
     enable = true;
@@ -44,12 +45,6 @@
     user = "weston";
     dataDir = "/mnt/games/plexdata";
   };
-
-#  services.jellyfin = {
-#    enable = true;
-#    openFirewall = true;
-#    user = "weston";
-#  };
 
   services = {
     desktopManager.plasma6.enable = true;
