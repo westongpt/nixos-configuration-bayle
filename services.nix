@@ -42,7 +42,7 @@
     theme = "sddm-astronaut-theme";
     extraPackages = [ pkgs.sddm-astronaut ];
   };
-  
+
   services.syncthing = {
     enable = true;
     user = "weston";

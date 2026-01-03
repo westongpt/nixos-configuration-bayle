@@ -1,14 +1,34 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    inputs.dms.homeModules.dankMaterialShell.default
+    inputs.dms.homeModules.dankMaterialShell.niri
+  ];
+
   home = {
     username = "weston";
     homeDirectory = "/home/weston";
   };
 
-  services.mako.enable = true; # notification daemon
+  services.mako = {
+    enable = true;
+    settings = {
+      border-radius = 15;
+      max-icon-size = 48;
+      padding = "12,12";
+    };
+  };
+
   services.polkit-gnome.enable = true; # polkit
   services.swayidle.enable = true; # idle daemon
+  programs.swaylock.package = pkgs.swaylock-effects;
+  programs.swaylock.enable = true;
+
+  proigrams.dankMaterialShell = {
+    enable = true;
+    niri.enableSpawn = true;
+  }
 
   programs.git = {
     enable = true;
@@ -20,7 +40,7 @@
   };
 
   home.packages = with pkgs; [
-      alacritty
+    alacritty
       fuzzel
       swaybg
       wget
@@ -46,7 +66,8 @@
       rsync
       yazi
       element-desktop
-  ];
+      wiremix
+      ];
 
   home.stateVersion = "25.11";
 }
