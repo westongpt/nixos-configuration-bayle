@@ -14,10 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # dms = {
+    #   url = "github:AvengeMedia/DankMaterialShell/stable";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
@@ -30,13 +30,13 @@
       inputs.quickshell.follows = "quickshell";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
-  outputs = { self, nixpkgs, stylix, home-manager, ... }@inputs: {
+  outputs = inputs@{ self, nixpkgs, stylix, home-manager, ... }: {
     nixosConfigurations.bayle = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [ 
@@ -46,6 +46,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.weston.imports = [
             ./home.nix
           ];

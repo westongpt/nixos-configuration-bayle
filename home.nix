@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
-  imports = [
-    inputs.dms.homeModules.dankMaterialShell.default
-    inputs.dms.homeModules.dankMaterialShell.niri
-  ];
+  # imports = [
+  #   inputs.dms.homeModules.dankMaterialShell.default
+  # ];
 
   home = {
     username = "weston";
@@ -25,10 +24,7 @@
   programs.swaylock.package = pkgs.swaylock-effects;
   programs.swaylock.enable = true;
 
-  proigrams.dankMaterialShell = {
-    enable = true;
-    niri.enableSpawn = true;
-  }
+  # programs.dankMaterialShell.enable = true;
 
   programs.git = {
     enable = true;
@@ -40,7 +36,10 @@
   };
 
   home.packages = with pkgs; [
-    alacritty
+      # kdePackages.kirigami.unwrapped
+      # kdePackages.qtdeclarative
+      # kdePackages.sonnet
+      alacritty
       fuzzel
       swaybg
       wget
@@ -68,6 +67,11 @@
       element-desktop
       wiremix
       ];
+
+    # home.sessionVariables.QML2_IMPORT_PATH = pkgs.lib.concatStringsSep ":" [
+    #   "${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml"
+    #   "${pkgs.kdePackages.kirigami.unwrapped}/lib/qt-6/qml"
+    # ];
 
   home.stateVersion = "25.11";
 }

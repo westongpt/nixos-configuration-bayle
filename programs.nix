@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
+    # inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
       inputs.quickshell.packages.${stdenv.hostPlatform.system}.default
       inputs.qml-niri.packages.${stdenv.hostPlatform.system}.default
       kdePackages.discover
