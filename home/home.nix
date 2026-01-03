@@ -13,6 +13,7 @@
   services.mako = {
     enable = true;
     settings = {
+      default-timeout = 3000;
       border-radius = 15;
       max-icon-size = 48;
       padding = "12,12";
