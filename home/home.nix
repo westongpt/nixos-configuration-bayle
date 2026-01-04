@@ -1,10 +1,6 @@
 { config, inputs, pkgs, ... }:
 
 {
-  # imports = [
-  #   inputs.dms.homeModules.dankMaterialShell.default
-  # ];
-
   home = {
     username = "weston";
     homeDirectory = "/home/weston";
@@ -13,7 +9,7 @@
   services.mako = {
     enable = true;
     settings = {
-      default-timeout = 3000;
+      default-timeout = 5000;
       border-radius = 15;
       max-icon-size = 48;
       padding = "12,12";

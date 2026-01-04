@@ -7,6 +7,7 @@
       ./system.nix
       ./services.nix
       ./programs.nix
+      ./gaming.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

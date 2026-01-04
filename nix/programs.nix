@@ -2,8 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
-      inputs.quickshell.packages.${stdenv.hostPlatform.system}.default
+# inputs.noctalia.packages.${stdenv.hostPlatform.system}.default
+    inputs.quickshell.packages.${stdenv.hostPlatform.system}.default
       inputs.qml-niri.packages.${stdenv.hostPlatform.system}.default
       kdePackages.discover
       kdePackages.dolphin
@@ -23,6 +23,8 @@
       (pkgs.sddm-astronaut.override { embeddedTheme = "jake_the_dog"; })
   ];
 
+  environment.localBinInPath = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = [
@@ -40,31 +42,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-  };
-
-  programs.steam = {
-    enable = true;
-  };
-
-# Fix for steam missing mouse cursors.
-  programs.steam.package = pkgs.steam.override {
-    extraPkgs = p: [
-      p.kdePackages.breeze
-    ];
-  };
-
-  programs.gamescope = {
-    enable = true;
-#    capSysNice = true;
-  };
-
-  programs.tmux = {
-    enable = true;
-    extraConfig = 
-      ''
-      set -g mouse on
-      set -g default-terminal "screen-256color"
-      '';
   };
 
   programs.zsh.enable = true;
