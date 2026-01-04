@@ -7,8 +7,9 @@ sudo cp -R ./home /etc/nixos
 sudo cp flake.lock /etc/nixos
 
 echo Building...
-sudo nixos-rebuild switch
-
+pushd /etc/nixos/
+sudo nixos-rebuild switch --flake .
+popd
 echo Retrieving lockfile...
 sudo cp /etc/nixos/flake.lock ./
 

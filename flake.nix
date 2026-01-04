@@ -39,8 +39,9 @@
   outputs = inputs@{ self, nixpkgs, stylix, home-manager, ... }: {
     nixosConfigurations.bayle = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
-      modules = [ 
-        stylix.nixosModules.stylix
+      modules = [
+      (import ./nix/overlays.nix)
+      stylix.nixosModules.stylix
         ./nix/configuration.nix 
         home-manager.nixosModules.home-manager
         {
