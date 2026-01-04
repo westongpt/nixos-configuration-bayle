@@ -52,11 +52,20 @@
       p.kdePackages.breeze
     ];
   };
-
+  
   programs.gamescope = {
     enable = true;
-# capSysNice = true;
-    package = pkgs.gamescope;
+    package = pkgs.gamescope.overrideAttrs (finalAttrs: oldAttrs: {
+      version = "3.16.2";
+      src = pkgs.fetchFromGitHub {
+        owner = "ValveSoftware";
+        repo = "gamescope";
+        rev = "refs/tags/3.16.2";
+        fetchSubmodules = true;
+        hash = "sha256-RInyP8MvC68/u5HhLhLidYvX7rS9X9Y4zB8X6Y4zB8=";
+      };
+      patches = [ ]; 
+    });
   };
 
   programs.tmux = {

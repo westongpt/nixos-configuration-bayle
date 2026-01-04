@@ -40,8 +40,7 @@
     nixosConfigurations.bayle = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit self inputs; };
       modules = [
-      (import ./nix/overlays.nix)
-      stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
         ./nix/configuration.nix 
         home-manager.nixosModules.home-manager
         {
