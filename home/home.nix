@@ -47,6 +47,7 @@
       unzip
       ripgrep
       xxd
+      tmux
       fastfetch
       yad
       btop
