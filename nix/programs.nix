@@ -14,6 +14,7 @@
       wl-clipboard
       pkgs.mpv
       ghostty
+      pkgs.discord-canary
       pkgs.openrgb
       clang
       pciutils

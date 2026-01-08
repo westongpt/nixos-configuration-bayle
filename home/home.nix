@@ -38,6 +38,7 @@
       kdePackages.kirigami.unwrapped
       kdePackages.qtdeclarative
       kdePackages.sonnet
+      pkgs.zed-editor
       swayidle
       alacritty
       fuzzel
