@@ -23,6 +23,7 @@
     xwayland-satellite
     vulkan-tools
     snixembed
+    pkgs.dart
     (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
   ];
 

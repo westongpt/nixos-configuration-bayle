@@ -9,7 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ./system.nix
-    ./software.nix
+    ./programs.nix
     ./specific/nvidia.nix
     ./specific/gaming.nix
     ./specific/obs.nix
