@@ -16,7 +16,6 @@
     wl-clipboard
     pkgs.mpv
     ghostty
-    pkgs.discord-canary
     pkgs.openrgb
     clang
     pciutils
@@ -71,7 +70,7 @@
       pkgs.xdg-desktop-portal-gnome
     ];
     config = {
-      common.default = [ "gtk" ];
+      common.default = [ "gnome" ];
     };
   };
 

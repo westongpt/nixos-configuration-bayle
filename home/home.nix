@@ -74,6 +74,7 @@
     yazi
     element-desktop
     wiremix
+    vesktop
   ];
   home.stateVersion = "25.11";
 }
