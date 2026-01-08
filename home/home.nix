@@ -20,7 +20,6 @@
   programs.swaylock.package = pkgs.swaylock-effects;
   programs.swaylock.enable = true;
   programs.waybar.enable = true;
-  # programs.dankMaterialShell.enable = true;
 
   programs.git = {
     enable = true;
@@ -29,6 +28,10 @@
       user.email = "weston@hanners.us";
       init.defaultBranch = "main";
     };    
+  };
+
+  stylix.targets = {
+    waybar.enable = false;
   };
 
   home.packages = with pkgs; [
