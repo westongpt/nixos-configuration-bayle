@@ -35,8 +35,6 @@ in
   programs = {
     gamescope = {
       enable = true;
-      package = unstable.gamescope;
-      # capSysNice = true;
     };
     gamemode.enable = true;
     steam = {

@@ -194,22 +194,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
-      "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1766885793,
@@ -256,29 +240,7 @@
         "dolphin-overlay": "dolphin-overlay",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "scopebuddy": "scopebuddy",
         "stylix": "stylix"
-      }
-    },
-    "scopebuddy": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1767270158,
-        "narHash": "sha256-ge89pCbisCF2ImxkUsNHJPVLO6kK4CsyCnYxZDNx75Y=",
-        "owner": "HikariKnight",
-        "repo": "ScopeBuddy",
-        "rev": "51cbc9a9daef05ff8015dc848f55cb1e0828a2ab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "HikariKnight",
-        "repo": "ScopeBuddy",
-        "type": "github"
       }
     },
     "stylix": {
