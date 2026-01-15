@@ -13,6 +13,7 @@
     kdePackages.partitionmanager
     kdePackages.plasma-workspace
     wayland-utils
+    zenity
     wl-clipboard
     pkgs.mpv
     ghostty
