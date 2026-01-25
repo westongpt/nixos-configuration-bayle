@@ -18,15 +18,20 @@
     pkgs.mpv
     ghostty
     killall
+    nil    
     pkgs.openrgb
     clang
     cargo
+    strawberry
     pciutils
     pcmanfm
     helix
+    libxshmfence
+    libGLU
     xwayland-satellite
     vulkan-tools
     snixembed
+    via
     pkgs.dart
     (pkgs.vivaldi.override { commandLineArgs = "--password-store=kwallet6"; })
     (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
@@ -59,6 +64,9 @@
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.hardware.openrgb.enable = true;
+
+  # Support VIA keyboards.
+  services.udev.packages = with pkgs; [ via ]; 
 
   services.avahi = {
     enable = true;
@@ -128,11 +136,30 @@
     user = "weston";
   };
 
+  services.navidrome = {
+    enable = true;
+    openFirewall = true;
+    user = "weston";
+    settings = {
+      MusicFolder = "/mnt/plex/Music/";
+      BaseUrl = "https://music.hanners.us";
+    };
+  };
+
   services.caddy = {
     enable = true;
     virtualHosts."books.hanners.us".extraConfig = ''
       reverse_proxy localhost:13378
     '';
+    virtualHosts."music.hanners.us".extraConfig = ''
+      reverse_proxy localhost:4533
+    '';
+  };
+
+  services.transmission = {
+    enable = true;
+    openFirewall = true;
+    user = "weston";
   };
 
   services.plex = {

@@ -25,6 +25,26 @@
   programs.swaylock.package = pkgs.swaylock-effects;
   programs.swaylock.enable = true;
   programs.waybar.enable = true;
+  programs.yt-dlp.enable = true;
+
+  programs.beets = {
+    enable = true;
+    settings = {
+      directory = "/mnt/plex/Music/";
+      library = "~/Music/Beets";
+      import = {
+        move = true;
+      };
+      embedart = {
+        ifempty = false;
+      };
+      fetchart = {
+        cautious = true;
+        minwidth = 400;
+      };
+      plugins = "musicbrainz fetchart embedart";
+    };
+  };
 
   programs.git = {
     enable = true;
@@ -49,6 +69,7 @@
     alacritty
     fuzzel
     swaybg
+    mc
     wget
     xdotool
     blender
