@@ -36,7 +36,9 @@
     vulkan-tools
     rsgain
     snixembed
+    chafa
     waypaper
+    felix-fm
     pkgs.dart
     (pkgs.vivaldi.override { commandLineArgs = "--password-store=kwallet6"; })
     (pkgs.sddm-astronaut.override { embeddedTheme = "black_hole"; })
@@ -137,14 +139,12 @@
 
   services.audiobookshelf = {
     enable = true;
-    openFirewall = true;
     port = 13378;
     user = "weston";
   };
-
+  
   services.navidrome = {
     enable = true;
-    openFirewall = true;
     user = "weston";
     settings = {
       MusicFolder = "/mnt/plex/Music/";
@@ -155,10 +155,10 @@
   services.caddy = {
     enable = true;
     virtualHosts."books.hanners.us".extraConfig = ''
-      reverse_proxy localhost:13378
+      reverse_proxy 127.0.0.1:13378
     '';
     virtualHosts."music.hanners.us".extraConfig = ''
-      reverse_proxy localhost:4533
+      reverse_proxy 127.0.0.1:4533
     '';
   };
 
