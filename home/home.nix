@@ -67,6 +67,7 @@
     pkgs.zed-editor
     pkgs.libnotify
     swayidle
+    jq
     alacritty
     fuzzel
     swaybg

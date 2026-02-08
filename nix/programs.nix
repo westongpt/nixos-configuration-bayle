@@ -15,6 +15,8 @@
     kdePackages.plasma-workspace
     wayland-utils
     qalculate-qt
+    qutebrowser
+    vscode
     zenity
     wl-clipboard
     pkgs.mpv
